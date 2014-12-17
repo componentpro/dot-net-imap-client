@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{794C0437-C3B6-410D-B991-EE037085137E}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImapClient</RootNamespace>
+    <AssemblyName>ImapClient</AssemblyName>
+    <ApplicationIcon>UltimateMail.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrialUnitTest|AnyCPU' ">
+    <OutputPath>bin\ReleaseTrialUnitTest\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files (x86)\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImapClient_TaskBased.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImapClient_TaskBased.Designer.cs">
+      <DependentUpon>ImapClient_TaskBased.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImapClient_Imap_TaskBased.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImapClient_ListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImapClient_Toolbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImapClient_TreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListItemTagInfo.cs" />
+    <Compile Include="ListViewSorters.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MessageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageViewer.Designer.cs">
+      <DependentUpon>MessageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordPrompt.Designer.cs">
+      <DependentUpon>PasswordPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ImapClient_TaskBased.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImapClient_TaskBased.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageViewer.resx">
+      <DependentUpon>MessageViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordPrompt.resx">
+      <DependentUpon>PasswordPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\CertProvider.resx">
+      <DependentUpon>CertProvider.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\CertValidator.resx">
+      <DependentUpon>CertValidator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Security\CertProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\CertProvider.Designer.cs">
+      <DependentUpon>CertProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security\CertTextExtractor.cs" />
+    <Compile Include="Security\CertValidator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Security\CertValidator.Designer.cs">
+      <DependentUpon>CertValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\Attachment.gif" />
+    <Content Include="res\Copy.png" />
+    <Content Include="res\Delete.png" />
+    <Content Include="res\Folder.ico" />
+    <Content Include="res\Login.png" />
+    <Content Include="res\Logout.png" />
+    <Content Include="res\Mail.gif" />
+    <Content Include="res\Mailbox.ico" />
+    <Content Include="res\Open.png" />
+    <Content Include="res\OpenedMail.ico" />
+    <Content Include="res\Paste.png" />
+    <Content Include="res\Refresh.png" />
+    <Content Include="res\Save.png" />
+    <Content Include="res\Stop16.png" />
+    <Content Include="res\Undelete.png" />
+    <Content Include="res\UnreadMail.ico" />
+    <Content Include="res\Upload.png" />
+    <Content Include="UltimateMail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ComponentPro.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>e:\ComponentPro\UltimateStudio v6.1.41216\Bin\Net4_0\ComponentPro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentPro.Network">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>e:\ComponentPro\UltimateStudio v6.1.41216\Bin\Net4_0\ComponentPro.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentPro.Mail">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>e:\ComponentPro\UltimateStudio v6.1.41216\Bin\Net4_0\ComponentPro.Mail.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
